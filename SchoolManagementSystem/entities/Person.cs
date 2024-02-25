@@ -8,11 +8,11 @@ namespace SchoolManagementSystem.entities
         private ulong Cpf { get; set; }
         private string DateOfBirth { get; set; }
         public Person() { }
-        public Person(string name, ulong cpf, string dateOfBitth)
+        public Person(string name, ulong cpf, string dateOfBirth)
         {
             Name = name;
             Cpf = cpf;
-            DateOfBirth = dateOfBitth;
+            DateOfBirth = dateOfBirth;
         }
         public virtual void printPerson()
         {

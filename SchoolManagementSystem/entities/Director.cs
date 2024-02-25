@@ -7,7 +7,7 @@ namespace SchoolManagementSystem.entities
     {
         private string Email {  get; set; }
         private string password;
-        public Director(string name, ulong cpf, string dateOfBitth, double salary, int workload, AcademicEducation academicEducation, string email) : base(name, cpf, dateOfBitth, salary, workload, academicEducation) 
+        public Director(string name, ulong cpf, string dateOfBirth, double salary, int workload, AcademicEducation academicEducation, string email) : base(name, cpf, dateOfBirth, salary, workload, academicEducation) 
         {
             Email = email;
         }

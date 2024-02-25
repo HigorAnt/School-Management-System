@@ -8,8 +8,8 @@ namespace SchoolManagementSystem.entities
     {
         private List<Teacher> teachers = new List<Teacher>();
         private List<string> disciplines = new List<string>();
-        public Teacher(string name, ulong cpf, string dateOfBitth, double salary, int workload, AcademicEducation academicEducation, List<string> disciplines) : base(name, cpf, dateOfBitth, salary, workload, academicEducation)
-        {
+        public Teacher(string name, ulong cpf, string dateOfBirth, double salary, int workload, AcademicEducation academicEducation, List<string> disciplines) : base(name, cpf, dateOfBirth, salary, workload, academicEducation)
+        { 
             this.disciplines = disciplines;
         }
         public sealed override void printPerson()

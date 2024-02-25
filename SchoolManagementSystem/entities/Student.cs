@@ -5,10 +5,10 @@ namespace SchoolManagementSystem.entities
 {
     sealed class Student : Person
     {
-        public int Matriculation {  get; set; }
+        public int Matriculation {  get; set; } 
         public int Series { get; set; }
         public EducationalDivision Degree { get; set; }
-        public Student(string name, ulong cpf, string dateOfBitth, int matricula, int series, EducationalDivision degree) : base(name, cpf, dateOfBitth)
+        public Student(string name, ulong cpf, string dateOfBirth, int matricula, int series, EducationalDivision degree) : base(name, cpf, dateOfBirth)
         {
             Matriculation = matricula;
             Series = series;

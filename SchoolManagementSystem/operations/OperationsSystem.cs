@@ -2,7 +2,7 @@
 
 namespace SchoolManagementSystem.operations
 {
-    class OperationsSystem
+    public class OperationsSystem
     {
         private string password;
         public void generatePassword(int tamanho)
@@ -11,6 +11,18 @@ namespace SchoolManagementSystem.operations
             var random = new Random();
             var result = new string(Enumerable.Repeat(chars, tamanho).Select(s => s[random.Next(s.Length)]).ToArray());
             password = result;
+        }
+        public bool validationPassword(string password)
+        {
+            bool result = false;
+            if(password == getPassword())
+            {
+                result = true;
+            } else
+            {
+                result = false;
+            }
+            return result;
         }
         public void setPassword(string newPassword)
         {
