@@ -15,7 +15,7 @@ namespace SchoolManagementSystem.entities
             Degree = degree;
         }
         public sealed override void printPerson()
-        {
+        { 
             base.printPerson();
             Console.WriteLine("Matrícula: " + Matriculation);
             Console.WriteLine("Série: " + Series);

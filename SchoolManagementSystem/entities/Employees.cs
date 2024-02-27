@@ -10,7 +10,7 @@ namespace SchoolManagementSystem.entities
         private int workload;
         public AcademicEducation AcademicEducationLevel { get; set; }
         public Employees() { }
-        public Employees(string name, ulong cpf, string dateOfBirth, double salary, int workload, AcademicEducation academicEducation) : base(name, cpf, dateOfBitth)
+        public Employees(string name, ulong cpf, string dateOfBirth, double salary, int workload, AcademicEducation academicEducation) : base(name, cpf, dateOfBirth)
         {
             this.setSalary(salary);
             this.setWorkload(workload);
