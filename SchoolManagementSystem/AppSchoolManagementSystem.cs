@@ -61,8 +61,20 @@ namespace SchoolManagementSystem
                     salary = double.Parse(Console.ReadLine());
                     Console.Write("Workload:");
                     workLoad = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Formation: ");
-                    formation = Enum.Parse<AcademicEducation>(Console.ReadLine());
+
+                    try
+                    {
+                        Console.WriteLine("Formation: ");
+                        formation = Enum.Parse<AcademicEducation>(Console.ReadLine());
+                    } catch (Exception ex)
+                    {
+                        Console.WriteLine("Invalid value!");
+                        Console.WriteLine(ex.Message);
+                        Console.WriteLine("Enter a valid value. Are they:\nBasicEducation\nGraduation\nMaster\nDoctorate");
+                    } finally
+                    {
+                        formation = Enum.Parse<AcademicEducation>(Console.ReadLine());
+                    }
 
                     switch (oper)
                     {
@@ -91,6 +103,7 @@ namespace SchoolManagementSystem
                             break;
                     }
                 }
+
                 if (oper == 3)
                 {
                     Console.WriteLine("Complete the following informations:");
@@ -124,6 +137,7 @@ namespace SchoolManagementSystem
                     student = new Student(name, cpf, dateOfBirth, matricula, series, degree);
                     students.Add(student);
                 }
+
                 if (oper == 4)
                 {
                     Console.WriteLine("Who do you want to see?");
@@ -154,16 +168,66 @@ namespace SchoolManagementSystem
                             break;
                     }
                 }
-                if(oper == 5)
+
+                if(oper ==5)
+                {
+                    Console.WriteLine("Which employee's data do you want to print?");
+                    Console.WriteLine("1- Director\n2- Coordinators\n3- Teachers\n4-Students");
+                    int operPerson = int.Parse(Console.ReadLine());
+
+                    switch(operPerson)
+                    {
+                        case 0:
+                            //director.printPerson();
+                            break;
+                        case 1:
+                            foreach(Coordinator person in coordinators)
+                            {
+                                person.printPerson();
+                            }
+                            break;
+                        case 2:
+                            foreach(Teacher person in teachers)
+                            {
+                                person.printPerson();
+                            }
+                            break;
+                        case 3:
+                            foreach(Student person in students)
+                            {
+                                person.printPerson();
+                            }
+                            break;
+                    }
+                }
+
+                if(oper == 6)
                 {
                     Console.WriteLine("Who wants to remove?");
                     Console.WriteLine("1- Coordinator\n2- Teacher\n3- Student");
                     int operRemove = int.Parse(Console.ReadLine());
+                    int operPerson;
+                    Coordinator coord;
 
                     switch(operRemove)
                     {
                         case 0:
-                            Console.WriteLine("You");
+                            foreach(Coordinator person in coordinators)
+                            {
+                                person.printPerson();
+                            }
+
+                            operPerson = int.Parse(Console.ReadLine());
+
+                            for (int i = 0; i < coordinators.Count; i++)
+                            {
+                                if(operPerson == i)
+                                {
+                                    coord = coordinators[i];
+                                    coordinators.Remove(coord);
+                                    break;
+                                }
+                            }
                             break;
                         case 1:
                             break;

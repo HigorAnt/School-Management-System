@@ -6,7 +6,6 @@ namespace SchoolManagementSystem.entities
 {
     sealed class Teacher : Employees
     {
-        private List<Teacher> teachers = new List<Teacher>();
         private List<string> disciplines = new List<string>();
         public Teacher(string name, ulong cpf, string dateOfBirth, double salary, int workload, AcademicEducation academicEducation, List<string> disciplines) : base(name, cpf, dateOfBirth, salary, workload, academicEducation)
         { 
@@ -15,7 +14,7 @@ namespace SchoolManagementSystem.entities
         public sealed override void printPerson()
         {
             base.printPerson();
-            Console.Write("Disciplinas ministradas: ");
+            Console.Write("Subjects taught: ");
             for(int i=1; i<=disciplines.Count; i++)
             {
                 Console.Write(disciplines[i]);

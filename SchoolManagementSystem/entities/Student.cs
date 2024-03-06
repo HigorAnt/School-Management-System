@@ -7,7 +7,7 @@ namespace SchoolManagementSystem.entities
     {
         public int Matriculation {  get; set; } 
         public int Series { get; set; }
-        public EducationalDivision Degree { get; set; }
+        public EducationalDivision Degree { get; set; } 
         public Student(string name, ulong cpf, string dateOfBirth, int matricula, int series, EducationalDivision degree) : base(name, cpf, dateOfBirth)
         {
             Matriculation = matricula;

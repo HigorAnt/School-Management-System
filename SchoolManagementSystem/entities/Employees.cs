@@ -16,32 +16,26 @@ namespace SchoolManagementSystem.entities
             this.setWorkload(workload);
             AcademicEducationLevel = academicEducation;
         }
-
         public void setSalary(double salary)
         {
             this.salary = salary;
         }
-
         public double getSalary()
         {
             return salary;
         }
-
         public void setWorkload(int  workload)
         {
             this.workload = workload;
         }
-
         public int getWorkload()
         {
             return workload;
         }
-
         public double valueSalary()
         {
             return getSalary() * getWorkload();
         }
-
         public override void printPerson()
         {
             base.printPerson();
